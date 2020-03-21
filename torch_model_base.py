@@ -14,6 +14,7 @@ class TorchModelBase(object):
             eta=0.01,
             optimizer=torch.optim.Adam,
             l2_strength=0,
+            num_layers=1,
             device=None):
         self.hidden_dim = hidden_dim
         self.hidden_activation = hidden_activation
@@ -25,6 +26,7 @@ class TorchModelBase(object):
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = torch.device(device)
+        self.num_layers = num_layers
         self.params = [
             'hidden_dim',
             'hidden_activation',
@@ -32,7 +34,8 @@ class TorchModelBase(object):
             'max_iter',
             'eta',
             'optimizer',
-            'l2_strength']
+            'l2_strength',
+            'num_layers']
         self.errors = []
         self.dev_predictions = {}
 

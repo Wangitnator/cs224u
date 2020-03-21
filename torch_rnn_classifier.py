@@ -42,12 +42,14 @@ class TorchRNNClassifierModel(nn.Module):
             hidden_dim,
             output_dim,
             bidirectional,
+            num_layers,
             device):
         super(TorchRNNClassifierModel, self).__init__()
         self.use_embedding = use_embedding
         self.device = device
         self.embed_dim = embed_dim
         self.bidirectional = bidirectional
+        self.num_layers = num_layers
         # Graph
         if self.use_embedding:
             self.embedding = self._define_embedding(
@@ -57,7 +59,8 @@ class TorchRNNClassifierModel(nn.Module):
             input_size=self.embed_dim,
             hidden_size=hidden_dim,
             batch_first=True,
-            bidirectional=bidirectional)
+            bidirectional=bidirectional,
+            num_layers=self.num_layers)
         if bidirectional:
             classifier_dim = hidden_dim * 2
         else:
@@ -153,14 +156,16 @@ class TorchRNNClassifier(TorchModelBase):
             use_embedding=True,
             embed_dim=50,
             bidirectional=False,
+            num_layers=1,
             **kwargs):
         self.vocab = vocab
         self.embedding = embedding
         self.use_embedding = use_embedding
         self.embed_dim = embed_dim
         self.bidirectional = bidirectional
+        self.num_layers = num_layers
         super(TorchRNNClassifier, self).__init__(**kwargs)
-        self.params += ['embed_dim', 'embedding', 'use_embedding', 'bidirectional']
+        self.params += ['embed_dim', 'embedding', 'use_embedding', 'bidirectional', 'num_layers']
 
     def build_dataset(self, X, y):
         X, seq_lengths = self._prepare_dataset(X)
@@ -175,6 +180,7 @@ class TorchRNNClassifier(TorchModelBase):
             hidden_dim=self.hidden_dim,
             output_dim=self.n_classes_,
             bidirectional=self.bidirectional,
+            num_layers=self.num_layers,
             device=self.device)
 
     def fit(self, X, y, **kwargs):
