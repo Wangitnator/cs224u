@@ -1,5 +1,5 @@
 # Stanford CS224u: Natural Language Understanding
-Solutions for Stanford CS224U: Natural Language Understanding, Spring 2019
+My solutions for Stanford CS224U: Natural Language Understanding, Spring 2019
 
 Here are my own solutions to all homeworks, for Prof. Christopher Pott's and Bill MacCartney's Masters-Level Machine Learning [course](https://web.stanford.edu/class/cs224u/)
 
