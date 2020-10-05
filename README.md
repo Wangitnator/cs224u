@@ -1,8 +1,20 @@
-# CS224u: Natural Language Understanding
+# Stanford CS224u: Natural Language Understanding
+Solutions for Stanford CS224U: Natural Language Understanding, Spring 2019
 
-Code for [the Stanford course](http://web.stanford.edu/class/cs224u/). The code is written to run under Python 3.7; [setup.ipynb](setup.ipynb) provides  additional details.
+Here are my own solutions to all homeworks, for Prof. Christopher Pott's and Bill MacCartney's Masters-Level Machine Learning [course](https://web.stanford.edu/class/cs224u/)
 
-# Instructors
+Each problem set and its solution are presented as distinct jupyter notebooks. Each is listed below. 
 
-* [Bill MacCartney](http://nlp.stanford.edu/~wcmac/)
-* [Christopher Potts](http://web.stanford.edu/~cgpotts/)
+**NOTE:** the jupyter notebooks are in branch "2019-spring". The links below point to notebooks on this branch.
+
+**Problem Set 1: Word Similarity Tasks**
+- [Jupyter Notebook](https://github.com/Wangitnator/cs224u/blob/2019-spring/hw1_wordsim.ipynb)
+
+**Problem Set 2: Stanford Sentiment Treebank**
+- [Jupyter Notebook](https://github.com/Wangitnator/cs224u/blob/2019-spring/hw2_sst.ipynb)
+
+**Problem Set 3: Relation extraction using distant supervision**
+- [Jupyter Notebook](https://github.com/Wangitnator/cs224u/blob/2019-spring/hw3_rel_ext.ipynb)
+
+**Problem Set 4: Word-level entailment with neural networks**
+- [Jupyter Notebook](https://github.com/Wangitnator/cs224u/blob/2019-spring/hw4_wordentail.ipynb)
